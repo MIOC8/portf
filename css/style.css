@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+
+}
+
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    scroll-behavior: smooth;
+    line-height: 15px;
+    font-family: "Poppins";
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+    margin-top: 1em;
+}
+
+
+
+
+
+.header {
+    height: 110vh;
+    width: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    height: 100px;
+    padding: 0px 20px;
+    background: #000;
+    position: fixed;
+    transition: 0.5s;
+}
+
+.container__active {
+    background: rgba(139, 139, 139, 0.8);
+    backdrop-filter: blur(6px);
+    transition: 0.5s;
+    height: 80px;
+}
+
+.header__block {
+    max-width: 1280px;
+    height: 100%;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-hedear__block {
+    height: 50px;
+    flex: 0 0 50px;
+    border-radius: 50%;
+    display: flex;
+    transform: rotate(-90deg);
+    stroke: #A8FF35;
+    transition: all 0.5s;
+    justify-content: center;
+    animation: identifier 10s infinite;
+    stroke-dashoffset: 180;
+    stroke-dasharray: 180;
+
+}
+
+.logo-hedear__block:hover {
+    transition: all 0.5s;
+    transform: scale(1) rotate(-90deg);
+    fill: #A8FF35;
+}
+
+@keyframes identifier {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.menu-hedear__block {
+    display: flex;
+    flex: 0 0 60%;
+    height: 50%;
+    justify-content: space-evenly;
+}
+
+.item__block-menu {
+    color: #fff;
+    line-height: 18px;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 1px;
+    height: 100%;
+    background: transparent;
+    overflow: none;
+    border: none;
+    position: relative;
+}
+
+.item__block-menu:focus {
+    outline: none;
+}
+
+.item__block-menu::after {
+    content: "";
+    display: block;
+    border-radius: 100px;
+    width: 0%;
+    transform: translateY(15px);
+    margin: auto;
+    opacity: 0;
+    height: 2px;
+    background: #a8ff35;
+    box-shadow: 0px 0px 30px 1px #A8FF35;
+    transition: all 0.6s;
+}
+
+.item__block-menu:hover::after {
+    transform: translateY(5px);
+    transition: all 0.6s;
+    width: 100%;
+    opacity: 1;
+}
+
+.Sign-hedear__block {
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #a8ff35;
+    color: #a8ff35;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.6s;
+}
+
+.Sign-hedear__block:hover {
+    background: #a8ff35;
+    transition: 0.6s;
+    color: #000000;
+}
+
+.header__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-hedaer {
+    font-size: 72px;
+    color: #fff;
+    text-align: center;
+    font-weight: 900;
+    line-height: 80px;
+}
+
+.text-header {
+    font-size: 18px;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 27px;
+    color: #8b8b8b;
+}
+
+.button-header {
+    font-size: 24px;
+    font-weight: 700;
+    background: #a8ff35;
+    padding: 20px 40px;
+    border: none;
+    font-family: "Poppins";
+    margin: 20px auto;
+}
+
+.block-bureger__menu {
+    position: fixed;
+    bottom: 0;
+    height: 0%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    transition: 0.8s;
+    overflow: hidden;
+}
+
+
+
+.new__menu {
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+}
+
+@media (max-Width: 565px) {
+    .menu-hedear__block {
+        display: none;
+    }
+
+    .block-bureger__menu {
+        display: flex;
+    }
+
+    .block-bureger__menu-active {
+        height: calc(100% - 80px);
+        transition: 0.8s;
+    }
+
+    .new__menu {
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+    }
+
+    .new-item {
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 70px;
+    }
+
+    .new-sign {
+        width: 100%;
+        height: 80px;
+        border-radius: 0;
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+
+@media (max-Width: 481px) {
+    .title-hedaer {
+        font-size: 60px;
+        line-height: 60px;
+    }
+}
+
+@media (max-Width: 403px) {
+    .title-hedaer {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .text-header {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .button-header {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+
+}
